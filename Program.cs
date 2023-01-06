@@ -8,31 +8,32 @@ public class Program
         {
             Console.WriteLine("WelCome To Employee Wage Computaion Program");
 
-            int Wage_Per_Hour = 20;
-            int Part_Time_Hour = 8;
-            int Full_Time_hour = 2 * Part_Time_Hour;
+            int Is_Part_Time = 1;
+            int Is_Full_Time = 2;
+            int Emp_Rate_per_Hour = 20;
 
+            int empHours = 0;
+            int empWage = 0;
+            Random random1 = new Random();
+            int CheckEmp = random1.Next(0, 3);
 
-            Random random = new Random();
-            int CheckEmp = random.Next(0, 3);
-            if (CheckEmp == 1)
+            switch (CheckEmp)
             {
-                Console.WriteLine("Employee is Fulltime Present");
-                int Daily_Wage_Of_Fulltime = Wage_Per_Hour * Full_Time_hour;
-                Console.WriteLine("Daily wage of full time Employee is " + Daily_Wage_Of_Fulltime);
+                case 1:
+                    //case 1:
+                    empHours = 4;
+                    break;
+                //	case Is_Full_Time:
+                case 2:
+                    empHours = 8;
+                    break;
+                default:
+                    empHours = 0;
+                    break;
+            }
+            empWage = empHours * Emp_Rate_per_Hour;
 
-            }
-            else if (CheckEmp == 2)
-            {
-                Console.WriteLine("Employee is part time present");
-                int Daily_Wage_Of_Parttime = Wage_Per_Hour * Part_Time_Hour;
-                Console.WriteLine("Daily wage of part time Employee is " + Daily_Wage_Of_Parttime);
-
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-            }
+            Console.WriteLine("Emp Wage:- " + empWage);
         }
     }
 }
