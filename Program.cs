@@ -7,17 +7,23 @@ public class Program
         public static void Main(string[] args)
         {
             Console.WriteLine("WelCome To Employee Wage Computaion Program");
-            int IS_FULL_TIME = 1;
-
+            int Wage_per_Hour = 20;
+            int Full_Day_Hour = 8;
             Random random = new Random();
-            int EMP_Check = random.Next(0, 2);
+            int isPresent = random.Next(0, 2);
 
-            if (EMP_Check == 1)
+            //Console.WriteLine(isPresent);
+            if (isPresent == 1)
             {
-                Console.WriteLine("Employee is Present");
+                Console.WriteLine("Employee is PRESENT");
+                int DailyWge = Wage_per_Hour * Full_Day_Hour;
+                Console.WriteLine("Daily wage of employee is " + DailyWge);
+
             }
             else
-                Console.WriteLine("Employee is Absent.");
+            {
+                Console.WriteLine("Employee is Absent");
+            }
         }
     }
 }
